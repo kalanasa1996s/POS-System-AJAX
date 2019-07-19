@@ -1,0 +1,284 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////*/
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+.dashboard-stats {
+    background-color: #FFFFFF;
+    position: relative;
+    min-height: 107px;
+    padding: 3px;
+    padding-left: 5%;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    display: table;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.dashboard-stats .left {
+    float: left;
+    padding-top: 5px;
+}
+.dashboard-stats .left h3 {
+    font-size: 30px;
+    font-family: 'Helvetica Neue', 'Nunito', sans-serif;
+    font-weight: 300;
+}
+.dashboard-stats .left h4 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+    line-height: 24px;
+}
+.dashboard-stats .right {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    width: 30%;
+    bottom: 3px;
+    border-radius: 2px;
+    font-size: 48px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.dashboard-stats .right i {
+    vertical-align: middle;
+    line-height: 107px;
+}
+.chart-parent {
+    position: relative;
+    clear: both;
+}
+.chart-parent .chart-height {
+    height: 450px;
+}
+.chart-parent .ct-chart .ct-line {
+    stroke-width: 1px;
+}
+.chart-parent .ct-chart .ct-series.ct-series-a .ct-bar,
+.chart-parent .ct-chart .ct-series.ct-series-a .ct-line,
+.chart-parent .ct-chart .ct-series.ct-series-a .ct-point,
+.chart-parent .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
+    stroke: #6fd64b;
+}
+.chart-parent .ct-chart .ct-series.ct-series-b .ct-bar,
+.chart-parent .ct-chart .ct-series.ct-series-b .ct-line,
+.chart-parent .ct-chart .ct-series.ct-series-b .ct-point,
+.chart-parent .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
+    stroke: #489ee7;
+}
+.chart-parent .ct-chart .ct-grid {
+    stroke: rgba(142, 142, 142, 0.2) !important;
+    stroke-width: 1px;
+    stroke-dasharray: 0px;
+}
+.chart-parent .ct-chart .ct-point {
+    stroke-width: 6px;
+    stroke-linecap: round;
+}
+.piluku-panel {
+    clear: both;
+    background-color: #FFFFFF;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 15px;
+}
+.piluku-panel.no-bg {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+.piluku-panel .form-group {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.nicescroll-cursors {
+    position: absolute;
+    top: 0px;
+    float: right;
+    width: 5px;
+    height: 604px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background-color: rgba(66, 66, 66, 0.5) !important;
+    background-clip: padding-box;
+    z-index: 9999;
+}
+/*spin*/
+.ion-spin {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    -webkit-animation-name: ion-spin;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotate;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+}
+@-webkit-keyframes ion-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@-moz-keyframes ion-spin {
+    0% {
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+.flatRed {
+    background-color: #fb5d5d;
+}
+.flatBlue {
+    background-color: #489ee7;
+}
+.flatOrange {
+    background-color: #f7941d;
+}
+.flatGreen {
+    background-color: #6fd64b;
+}
+.flatRedc {
+    color: #fb5d5d !important;
+}
+.flatBluec {
+    color: #489ee7 !important;
+}
+.flatOrangec {
+    color: #f7941d !important;
+}
+.flatGreenc {
+    color: #6fd64b !important;
+}
+
+
+.dashboard-stats .right i {
+    vertical-align: middle;
+    line-height: 107px;
+}
+.chart-parent {
+    position: relative;
+    clear: both;
+}
+.chart-parent .chart-height {
+    height: 450px;
+}
+.chart-parent .ct-chart .ct-line {
+    stroke-width: 1px;
+}
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////*/
+
