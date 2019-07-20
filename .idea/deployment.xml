@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="AJAX5">
+    <serverData>
+      <paths name="AJAX5">
+        <serverdata>
+          <mappings>
+            <mapping deploy="AJAX5" local="$PROJECT_DIR$" web="/AJAX5" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
