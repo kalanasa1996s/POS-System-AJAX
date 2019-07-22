@@ -27,14 +27,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/simple-sidebar.css">
     <link rel="stylesheet" href="css/Dashbord.css">
-    <link rel="stylesheet" href="fontawesome-free-5.8.2-web/css/all.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-
-
 </head>
 <body>
-
 
 <div class="d-flex" id="wrapper">
 
@@ -91,140 +85,111 @@
         <!--//////////////////////////////////////////////////////body 01//////////////////////////////////////////////////////////////-->
 
         <div class="container-fluid">
-            <!--            <h1 class="mt-4">Customer</h1>-->
 
             <div class="m_content">
-
+<!--                <div class="card-header">-->
+<!--                    <h3>Place Order</h3>-->
+<!--                </div>-->
                 <div class="m_card">
-                    <form id="customerForm">
+                    <form id="order_form">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>First Name</label>
-                                <input id="custID" type="text" class="form-control" placeholder="First Name"
-                                       name="txtFirstName">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Last Name</label>
-                                <input id="name" type="text" class="form-control" placeholder="Last Name"
-                                       name="txtLastName">
+                                <label>OrderID</label>
+                                <input type="text" id="oid" class="form-control" placeholder="First Name" name="oid
+
+
+                            <div class="form-group col-md-6" >
+                                <label>Select Customer</label>
+                                <select id="custID"  class="form-control" name="cid">
+                                    <option selected>Choose Customer...</option>
+                                </select>
                             </div>
                         </div>
-
                         <div class="form-row">
-
-
                             <div class="form-group col-md-6">
-                                <label>Customer ID</label>
-                                <input id="email" type="email" class="form-control" placeholder="Customer ID"
-                                       name="cusID">
+                                <label>Select Item</label>
+                                <select id="item"  class="form-control" name="item">
+                                    <option selected>Choose...</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Address</label>
-                                <input id="name" type="text" class="form-control" placeholder="Address" name="address">
+                                <label>ItemName</label>
+                                <input id="itemName" type="text" class="form-control" disabled placeholder="ItemName" name="itemName">
                             </div>
                         </div>
-
-
                         <div class="form-row">
-
-                            <div class="form-group col-md-6">
-                                <label>Nic</label>
-                                <input id="custID" type="text" class="form-control" placeholder="Nic" name="nic">
+                            <div class="form-group col">
+                                <label>Avilable Qty</label>
+                                <input id="avalableqty" type="text" disabled class="form-control" placeholder="Qty" name="avalableqty">
                             </div>
+                            <div class="form-group col">
+                                <label>Unit Price</label>
+                                <input id="price" type="text" class="form-control" placeholder="Price" name="price" disabled>
+                            </div>
+                            <div class="form-group col">
+                                <label>Buying Qty</label>
+                                <input id="bQty" type="text" class="form-control" placeholder="Qty" name="bQty">
+                            </div>
+                            <div class="form-group col-12">
 
-                            <div class="form-group col-md-6">
-                                <label>PhoneNumber.</label>
-                                <input id="tel" type="text" class="form-control" placeholder="PhoneNumber"
-                                       name="phoneNO">
+                                <button type="button" class="btn btn-primary" id="addToCart"> Add To Cart</button>
                             </div>
                         </div>
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ItemCode</th>
+                                <th scope="col">ItemName</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">UnitPrice</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label>Total</label>
+                                <input id="total" type="text" class="form-control" placeholder="Price" disabled>
+                            </div>
 
-                        <button id="add" type="button" class="btn btn-primary">ADD</button>
-                        <button id="update" type="button" class="btn btn-success">UPDATE</button>
-                        <button id="cancel" type="button" class="btn btn-secondary">CANCEL</button>
-                        <button id="delete" type="button" class="btn btn-danger" onclick="deleteRow(row)">DELETE
-                        </button>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="confrm" class="btn btn-primary float-right">Confirm Order</button>
+                        </div>
                     </form>
                 </div>
 
-                <!--/////////////////getAll - get data in table///////////////////-->
-                <?php
-                include 'dbConnection.php';
-                $SQL = "Select * from customer";
-                $resultset = mysqli_query($connection, $SQL);
-
-                ?>
-
-
-                <table id="table" class="table table-hover">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Customer ID</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Nic</th>
-                        <th scope="col">PhoneNumber</th>
-
-
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <?php
-                    while ($rowdata = $resultset->fetch_assoc()):
-                        ?>
-                        <tr onclick="displayRow(this)">
-                            <td><?php echo $rowdata['FirstName'] ?></td>
-                            <td><?php echo $rowdata['LastName'] ?></td>
-                            <td><?php echo $rowdata['CID'] ?></td>
-                            <td><?php echo $rowdata['Address'] ?></td>
-                            <td><?php echo $rowdata['nic'] ?></td>
-                            <td><?php echo $rowdata['Tell'] ?></td>
-                        </tr>
-
-
-                    <?php endwhile; ?>
-
-                    <!--///////////////////////////////////////////////////////end///////////////////////////////////////////////////-->
-                    </tbody>
-                </table>
-            </div>
 
         </div>
 
+
+        </div>
+
+        <!--        //////////////////////////////////////////////////////body 01//////////////////////////////////////////////////////////////-->
+
     </div>
-
-    <!--        //////////////////////////////////////////////////////body 01//////////////////////////////////////////////////////////////-->
-
-</div>
-<!-- /#page-content-wrapper -->
+    <!-- /#page-content-wrapper -->
 
 </div>
 
 <!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 
 <!-- Menu Toggle Script -->
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script src="js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/deleteCustomer.js"></script>
-<script src="js/updateCustomer.js"></script>
-<script src="js/myScripts.js"></script>
-<script src="js/customer.js"></script>
+<script src="js/lord.js"></script>
+<script src="js/dataJS.js"></script>
 
-<script>
-    $("#update").hide();
-    $("#cancel").hide();
-    $("#delete").hide();
-</script>
 
 <script>
     $("#menu-toggle").click(function (e) {

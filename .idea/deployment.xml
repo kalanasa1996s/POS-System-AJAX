@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="AJAX5">
+  <component name="PublishConfigData" serverName="AJAX5" deleteMissingItems="true" createEmptyFolders="true">
     <serverData>
       <paths name="AJAX5">
         <serverdata>

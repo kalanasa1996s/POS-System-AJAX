@@ -1,11 +1,11 @@
-$("#add").click(function () {
-    var cusFromData=$("#customerForm").serialize();
+$("#delete").click(function () {
+    var ItemFromData=$("#itemForm").serialize();
 
     $.ajax({
-        url:"saveCustomer.php",
+        url:"deleteItem.php",
         method:"POST",
         async:true,
-        data:cusFromData
+        data:ItemFromData
 
     }).done(function (res) {
         alert(res);

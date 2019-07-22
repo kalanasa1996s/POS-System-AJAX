@@ -24,17 +24,14 @@
           integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href=" css/bootstrap.min.css">
     <link rel="stylesheet" href="css/simple-sidebar.css">
     <link rel="stylesheet" href="css/Dashbord.css">
     <link rel="stylesheet" href="fontawesome-free-5.8.2-web/css/all.css">
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
 
 
 </head>
 <body>
-
 
 <div class="d-flex" id="wrapper">
 
@@ -91,114 +88,100 @@
         <!--//////////////////////////////////////////////////////body 01//////////////////////////////////////////////////////////////-->
 
         <div class="container-fluid">
-            <!--            <h1 class="mt-4">Customer</h1>-->
+
 
             <div class="m_content">
 
                 <div class="m_card">
-                    <form id="customerForm">
+                    <form id="itemForm">
+
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>First Name</label>
-                                <input id="custID" type="text" class="form-control" placeholder="First Name"
-                                       name="txtFirstName">
+                                <label>Item ID</label>
+                                <input id="ItemID" type="text" class="form-control" placeholder="Item ID" name="ItemID">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Last Name</label>
-                                <input id="name" type="text" class="form-control" placeholder="Last Name"
-                                       name="txtLastName">
+                                <label>Item Name</label>
+                                <input id="name" type="text" class="form-control" placeholder="Item Name" name="name">
                             </div>
                         </div>
 
                         <div class="form-row">
-
-
                             <div class="form-group col-md-6">
-                                <label>Customer ID</label>
-                                <input id="email" type="email" class="form-control" placeholder="Customer ID"
-                                       name="cusID">
+                                <label>Item Barnd</label>
+                                <input id="qty" type="text" class="form-control" placeholder="Item Brand" name="qty">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Address</label>
-                                <input id="name" type="text" class="form-control" placeholder="Address" name="address">
+                                <label>Unit Price</label>
+                                <input id="cprice" type="text" class="form-control" placeholder="Unit Price" name="cprice">
                             </div>
                         </div>
-
 
                         <div class="form-row">
-
                             <div class="form-group col-md-6">
-                                <label>Nic</label>
-                                <input id="custID" type="text" class="form-control" placeholder="Nic" name="nic">
-                            </div>
-
-                            <div class="form-group col-md-6">
-                                <label>PhoneNumber.</label>
-                                <input id="tel" type="text" class="form-control" placeholder="PhoneNumber"
-                                       name="phoneNO">
+                                <label>QTY</label>
+                                <input type="text" class="form-control" placeholder="QTY" name="sprice">
                             </div>
                         </div>
+
 
                         <button id="add" type="button" class="btn btn-primary">ADD</button>
-                        <button id="update" type="button" class="btn btn-success">UPDATE</button>
+                        <button id="update"  onclick="updateRow()" type="button" class="btn btn-success">UPDATE</button>
                         <button id="cancel" type="button" class="btn btn-secondary">CANCEL</button>
-                        <button id="delete" type="button" class="btn btn-danger" onclick="deleteRow(row)">DELETE
+                        <button id="delete" onclick="deleteRow(row)" type="button" class="btn btn-danger">DELETE
                         </button>
                     </form>
                 </div>
 
-                <!--/////////////////getAll - get data in table///////////////////-->
+
+<!--               //////////////////////////////////get data in table//////////////////////////////-->
                 <?php
                 include 'dbConnection.php';
-                $SQL = "Select * from customer";
+                $SQL = "Select * from Item";
                 $resultset = mysqli_query($connection, $SQL);
 
                 ?>
 
-
-                <table id="table" class="table table-hover">
-                    <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Customer ID</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Nic</th>
-                        <th scope="col">PhoneNumber</th>
-
-
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <?php
-                    while ($rowdata = $resultset->fetch_assoc()):
+                <table class="table table-hover" id="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Item Brand</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">QTY</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+<?php
+                        while ($rowdata = $resultset->fetch_assoc()):
                         ?>
                         <tr onclick="displayRow(this)">
-                            <td><?php echo $rowdata['FirstName'] ?></td>
-                            <td><?php echo $rowdata['LastName'] ?></td>
-                            <td><?php echo $rowdata['CID'] ?></td>
-                            <td><?php echo $rowdata['Address'] ?></td>
-                            <td><?php echo $rowdata['nic'] ?></td>
-                            <td><?php echo $rowdata['Tell'] ?></td>
+                            <td><?php echo $rowdata['ItemCode'] ?></td>
+                            <td><?php echo $rowdata['ItemName'] ?></td>
+                            <td><?php echo $rowdata['ItemBrand'] ?></td>
+                            <td><?php echo $rowdata['UnitPrice'] ?></td>
+                            <td><?php echo $rowdata['Quantity'] ?></td>
+
                         </tr>
 
 
-                    <?php endwhile; ?>
+                        <?php endwhile; ?>
 
-                    <!--///////////////////////////////////////////////////////end///////////////////////////////////////////////////-->
-                    </tbody>
-                </table>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
         </div>
 
+        <!--        //////////////////////////////////////////////////////body 01//////////////////////////////////////////////////////////////-->
+
     </div>
-
-    <!--        //////////////////////////////////////////////////////body 01//////////////////////////////////////////////////////////////-->
-
-</div>
-<!-- /#page-content-wrapper -->
+    <!-- /#page-content-wrapper -->
 
 </div>
 
@@ -212,19 +195,8 @@
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/deleteCustomer.js"></script>
-<script src="js/updateCustomer.js"></script>
-<script src="js/myScripts.js"></script>
-<script src="js/customer.js"></script>
-
-<script>
-    $("#update").hide();
-    $("#cancel").hide();
-    $("#delete").hide();
-</script>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../bootstarp/js/bootstrap.bundle.min.js"></script>
 
 <script>
     $("#menu-toggle").click(function (e) {
@@ -233,6 +205,16 @@
     });
 </script>
 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/myScripts.js"></script>
+<script src="js/addItem.js"></script>
+<script src="js/deleteItem.js"></script>
+<script src="js/customer.js"></script>
+<script>
+    $("#update").hide();
+    $("#cancel").hide();
+    $("#delete").hide();
+</script>
 
 </body>
 </html>

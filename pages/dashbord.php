@@ -38,8 +38,8 @@
         <div class="list-group list-group-flush">
             <a href="dashbord.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
             <a href="../customer.php" class="list-group-item list-group-item-action bg-light">Customer</a>
-            <a href="item.php" class="list-group-item list-group-item-action bg-light">Item</a>
-            <a href="placeOrder.php" class="list-group-item list-group-item-action bg-light">Order</a>
+            <a href="../item.php" class="list-group-item list-group-item-action bg-light">Item</a>
+            <a href="../placeOrder.php" class="list-group-item list-group-item-action bg-light">Order</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
             <a href="#" class="list-group-item list-group-item-action bg-light">Logout</a>
         </div>
